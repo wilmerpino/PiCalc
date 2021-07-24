@@ -14,14 +14,24 @@ const getToken = async () => {
   return res.body.token;
 };
 
-describe("Calculo PI", () => {
+describe("GET PI", () => {
   it("No autenticado", async () => {
     const res = await request(app)
       .get("/pi?random_limit=10")
       .send();
 
-    expect(res.status).to.equal(200);
+    expect(res.status).to.equal(401);
   });
+
+    it("Parametro no válido", async () => {
+      const token = await getToken().then((res) => res);
+      const res = await request(app)
+        .get("/pi?random_limit=200")
+        .send()
+        .set("auth", token);
+
+      expect(res.status).to.equal(500);
+    });
 
   it("Valor correcto", async () => {
     const token = await getToken().then((res) => res);
@@ -35,7 +45,8 @@ describe("Calculo PI", () => {
 
     expect(res.status).to.equal(200);
 
-    pi = pi.split(".")[1];
-    expect(pi.lenght).to.equal(rand);
+    pi = pi.split(".");
+    
+    expect(pi[1].length).to.equal(rand);
   });
 });

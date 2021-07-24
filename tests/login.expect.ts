@@ -12,7 +12,7 @@ describe("POST Login", () => {
             password: "xxxx",
           });
         
-        expect(res.status).to.equal(200);        
+        expect(res.status).to.equal(400);        
   });
 
     it("Autenticado", async () => {
