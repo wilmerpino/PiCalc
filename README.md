@@ -13,6 +13,7 @@ La aplicación se corre en el puerto 300
 **Carpetas y archivos del proyecto**
 - src
   - config.ts
+  - controller.ts
   - index.ts
   - middleware.ts
   - routes.ts
