@@ -1,7 +1,8 @@
 import express from "express";
 import routes from './routes';
+import config from './config';
 
-const PORT = process.env.PORT || 3000;
+const PORT = config['dev']['port'] || 4000;
 
 const app = express();
 
