@@ -12,7 +12,8 @@ const PORT = config[ENV]["port"] || 3000;
 const app = express();
 
 //Middlewere
-const allowedOrigins = ["http://localhost:4000"];
+//Descomentar para protección por Cors
+const allowedOrigins = [/*"http://localhost:4000"*/];
 
 const options: cors.CorsOptions = {
   origin: allowedOrigins,
