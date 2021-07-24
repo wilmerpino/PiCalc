@@ -1,8 +1,6 @@
 /**
  * Archivo de configuración del sitio
  */
-const env = process.env.NODE_ENV;  //Puede definir la Variable de Entorno del sitio, para pruebas se utilizara 'dev'
-
 const dev = {
   port: 3000,
   login: "santiago",
