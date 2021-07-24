@@ -10,6 +10,17 @@ Para instalar ejecute:
 La aplicación se corre en el puerto 300
 > http://localhost:3000
 
+**Carpetas y archivos del proyecto**
+- src
+  - config.ts
+  - index.ts
+  - middleware.ts
+  - routes.ts
+- tests
+  - login.expect.ts
+  - pi.expect.ts
+- .env
+
 Los EndPoint son los siguientes:
 **Autenticación**
 > POST: http://localhost:3000/login
