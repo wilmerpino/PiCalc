@@ -2,15 +2,15 @@
 Calcular los decimales del pi considerando el número random: Recibe un parámetro de entrada que calcula un número random entre (parametro/2 y el
 parametro). Luego deberás calcular los decimales del pi considerando el número random.
 
-Para instalar ejecute:
+## Para instalar ejecute
 > npm install
 
 > npm run dev
 
-La aplicación se corre en el puerto 300
+## La aplicación se corre en el puerto 300
 > http://localhost:3000
 
-**Carpetas y archivos del proyecto**
+## Carpetas y archivos del proyecto
 - src
   - config.ts
   - controller.ts
@@ -22,11 +22,11 @@ La aplicación se corre en el puerto 300
   - pi.expect.ts
 - .env
 
-Los EndPoint son los siguientes:
+## Los EndPoint son los siguientes:
 **Autenticación**
 > POST: http://localhost:3000/login
 
-INPUT
+**INPUT**
 ````
 {
   "login": "santiago",
@@ -34,7 +34,7 @@ INPUT
 }
 ````
 
-OUTPUT
+**OUTPUT**
 ````
 {
 "success": true,
@@ -43,21 +43,21 @@ OUTPUT
 }
 ````
 
-**Uso del método PI para calcular la cantidad de decimales**
+## Uso del método PI para calcular la cantidad de decimales
 > GET: http://localhost:3000/pi
 
 Añadir el Header al llamado:
 > auth: 'token recibido en el endopoint Login'
 
-Ejemplo:
+## Ejemplo:
 ````
 auth: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJzYW50aWFnbyIsImlhdCI6MTYyNzE1MTkzOCwiZXhwIjoxNjI3MTg0MzM4fQ.QwsthghWjQ4pYDn0f-DvgcmhmG3TZl4MM6iLl-LCxxI'
 ````
 
-INPUT
+**INPUT**
 > /pi?random_limit=12
 
-OUTPUT
+**OUTPUT**
 ````
 {
   "random": 7,
@@ -85,7 +85,7 @@ Debe recibirse el parámetro _random_limit_ por la URL
 }
 ````
 
-Sólo se permiten números
+**Sólo se permiten números**
 ````
 {
 "success": false,
@@ -93,7 +93,7 @@ Sólo se permiten números
 }
 ````
 
-Solo se permiten números entre 0 y 100
+**Solo se permiten números entre 0 y 100**
 ````
 {
 "success": false,
@@ -103,16 +103,17 @@ Solo se permiten números entre 0 y 100
 
 ## Pruebas unitarias
 Se difinen 5 pruebas
-1. POST Login
+
+**1. POST Login**
    - Usuario o Contraseña no validos
    - Autenticado
 
-2. GET PI 
+**2. GET PI**
    - No autenticado
    - Parametro no válido
    - Valor correcto
    
-Para ejecutar las pruebas ejecute
+**Para ejecutar las pruebas ejecute**
 > npm run test
 
 ## Tecnogías utilizadas
