@@ -133,15 +133,26 @@ Se difinen 5 pruebas
 **Para ejecutar las pruebas ejecute**
 > npm run test
 
-## Tecnogías utilizadas
+## Contenedor ##
+Se agrega archivo `Dockerfile` con la configuración de Docker para virtualizar el aplicativo
 
-- [x] Node.js
-- [x] Typescript
-- [x] Express
-- [x] Cors
-- [x] JWT
-- [x] Mocha
-- [x] Chai   
+Siga las siguientes instruccones para generar el _Contenedor Docker_
+
+Desde la carpta `PiCalc` ejecute la siguente secuencia de comandos
+
+Constuir la imagen
+> docker build -t yapopi:0.0.1 . --no-cache=true
+
+Verificar la imagen creada
+> docker image ls
+
+Monatr la imagen en un contededor de la imagen
+> docker container run -it -d -p 3000:3000 yapopi:0.0.1
+
+Vareficiar el contenedor ejecutánde
+> docker container ls
+
+**La aplicación queda ejecutándose en la URL http://localhost:300**
 
 ## Documentación adicional ##
 La carpeta `documentacion` contiene información de pruebas adicionales
@@ -152,9 +163,23 @@ Se agrega collectión de Postman en `documentacion/YapoPI.postman_collection.jso
 **Apache jMeter**
 Se realizan pruebas decarga con [Apache jMeter](https://jmeter.apache.org/), los resultados de las pruebas están en `documentacion/jMetter/HTMLReports/index.html`
 
+## Tecnogías utilizadas
+
+- [x] Node.js
+- [x] Typescript
+- [x] Express
+- [x] Cors
+- [x] JWT
+- [x] Mocha
+- [x] Chai 
+- [x] Docker
+- [x] Apache jMeter  
+
 # Autor #
 Wilmer Pino
+
 wilmerpino@gmail.com
+
 https://www.linkedin.com/in/wilmerpino/
 
 
