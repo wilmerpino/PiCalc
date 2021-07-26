@@ -146,10 +146,10 @@ Constuir la imagen
 Verificar la imagen creada
 > docker image ls
 
-Monatr la imagen en un contededor de la imagen
+Montar la imagen en un contededor Docker
 > docker container run -it -d -p 3000:3000 yapopi:0.0.1
 
-Vareficiar el contenedor ejecutánde
+Varificar que el contenedor este ejectándose
 > docker container ls
 
 **La aplicación queda ejecutándose en la URL http://localhost:300**
@@ -158,10 +158,10 @@ Vareficiar el contenedor ejecutánde
 La carpeta `documentacion` contiene información de pruebas adicionales
 
 **Postman Collection**
-Se agrega collectión de Postman en `documentacion/YapoPI.postman_collection.json` con la configuración de los EndPoint (recuerde actualizar el Token de seguridad)
+Se agrega collection de Postman en `documentacion/YapoPI.postman_collection.json` con la configuración de los EndPoint (recuerde actualizar el Token de seguridad)
 
 **Apache jMeter**
-Se realizan pruebas decarga con [Apache jMeter](https://jmeter.apache.org/), los resultados de las pruebas están en `documentacion/jMetter/HTMLReports/index.html`
+Se realizan pruebas de carga con [Apache jMeter](https://jmeter.apache.org/), los resultados de las pruebas están en `documentacion/jMetter/HTMLReports/index.html`
 
 ## Tecnogías utilizadas
 
