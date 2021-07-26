@@ -29,6 +29,7 @@ class Controller{
 
             const token = jwt.sign({ userId: login},  jtwSecret,  { expiresIn: "9h" });
 
+            console.log('Usuario autenticado');
             res.json({
                 success: true,
                 message: 'Usuario autenticado',
@@ -36,6 +37,7 @@ class Controller{
             });
         }
         catch(exception){
+            console.log(exception);
             res.status(400).json({
                 success: false,
                 message: exception
@@ -78,6 +80,7 @@ class Controller{
             //Calcula el valor de PI con la cantidad de decimales de rand
             const pi = Math.PI.toFixed(rand);
 
+            console.log(`Request: /pi/?random_limit=${random_limit} (el número random fue calculado en ${rand}) Salida: PiCalc": “${pi}"`);
             //Respuesta satifactoria    
             res.json({
                random: rand,
@@ -86,6 +89,7 @@ class Controller{
               });
         }
         catch(exception){
+            console.error(exception);
             res.status(500).json({
                 success: false,
                 message: exception,
