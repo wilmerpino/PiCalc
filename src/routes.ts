@@ -4,9 +4,9 @@ import { checkJwt } from './middleware';
 
 const routes = Router(); 
 
-routes.post("/login", Controller.Login);
+routes.post("/api/login", Controller.Login);
 
-routes.get("/pi", checkJwt, Controller.Pi);
+routes.get("/api/pi", checkJwt, Controller.Pi);
 
 export default routes;
 

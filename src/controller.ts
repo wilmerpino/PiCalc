@@ -54,39 +54,41 @@ class Controller{
     static Pi = async (req: Request, res: Response) => {
         const random_limit = <string>req.query["random_limit"];
         try{
-            //Valida que el numero haya sido pasado como parametro
-            if (random_limit === undefined){
-                throw 'No se recibió el parámetro ramdom_limit';
-            }
-            //Convierte el  parametro a entero
-            let rl = parseInt(random_limit);
+          //Valida que el numero haya sido pasado como parametro
+          if (random_limit === undefined) {
+            throw "No se recibió el parámetro ramdom_limit";
+          }
 
-            //Valida que sea un numero
-            if (isNaN(rl)) {
-              throw "Debe ingresar un número entero ente 0 y 100";
-            }
+          //Valida que sea un numero
+          if (isNaN(random_limit)) {
+            throw "Debe ingresar un número entero ente 0 y 48";
+          }
 
-            //Valida que el número este entre el rango valido para PI
-            if (rl < 0 || rl > 100) {
-                throw "El random limit debe ser mayor >= 0  y <= 100";
-            }
+          //Convierte el  parametro a entero
+          let rl = parseInt(random_limit);
+          //Valida que el número este entre el rango valido para PI
+          if (rl < 0 || rl > 48) {
+            throw "El random limit debe ser mayor >= 0  y <= 48";
+          }
 
-            //calcula el valor del numero aleatorio
-            let rand =  Math.random() * (rl - rl/2) + rl/2;
+          //calcula el valor del numero aleatorio
+          let rand = Math.random() * (rl - rl / 2) + rl / 2;
 
-            //Devuelve solo la parte entera del numero aleatorio
-            rand = Math.trunc(rand);
+          //Devuelve solo la parte entera del numero aleatorio
+          rand = Math.trunc(rand);
 
-            //Calcula el valor de PI con la cantidad de decimales de rand
-            const pi = Math.PI.toFixed(rand);
+          //Calcula el valor de PI con la cantidad de decimales de rand
+          const pi = Math.PI.toFixed(rand);
 
-            console.log(`Request: /pi/?random_limit=${random_limit} (el número random fue calculado en ${rand}) Salida: PiCalc": “${pi}"`);
-            //Respuesta satifactoria    
-            res.json({
-               random: rand,
-                random_limit: rl,
-                pi: pi,
-              });
+          console.log(
+            `Request: /pi/?random_limit=${random_limit} (el número random fue calculado en ${rand}) Salida: PiCalc": “${pi}"`
+          );
+          //Respuesta satifactoria
+          res.json({
+            random: rand,
+            random_limit: rl,
+            pi: pi,
+          });
         }
         catch(exception){
             console.error(exception);

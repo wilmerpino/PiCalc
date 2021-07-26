@@ -1,0 +1,70 @@
+{
+	"info": {
+		"_postman_id": "b8106671-0c69-4fdd-91f7-6cd97371d6fa",
+		"name": "Yapo PI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST - api/login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"login\": \"santiago\",\r\n  \"password\": \"password\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET - api/pi",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "auth",
+						"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJzYW50aWFnbyIsImlhdCI6MTYyNzM0MDEzNywiZXhwIjoxNjI3MzcyNTM3fQ.msHZUjY8btuYQJx0N9x6B3s05-1TWh8qAfHW5txihRo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/pi?random_limit=48",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"pi"
+					],
+					"query": [
+						{
+							"key": "random_limit",
+							"value": "48"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
