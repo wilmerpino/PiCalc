@@ -2,15 +2,27 @@
 Calcular los decimales del pi considerando el número random: Recibe un parámetro de entrada que calcula un número random entre (parametro/2 y el
 parametro). Luego deberás calcular los decimales del pi considerando el número random.
 
-## Para instalar ejecute
+## Instalación ##
+**Descargue el proyecto desde el repositorio*
+> git clone https://github.com/wilmerpino/PiCalc.git
+
+**Moverse a la carpeta PiCalc**
+> cd PiCalc
+
+**Descargar las dependencias con npm**
 > npm install
 
+**Ejecutar la aplicación en modo de desarrollo**
 > npm run dev
+
+**Nota: Debe tener instalado `node` y `npm`**
 
 ## La aplicación se corre en el puerto 300
 > http://localhost:3000
 
 ## Carpetas y archivos del proyecto
+- documentacion
+  - jMeter  
 - src
   - config.ts
   - controller.ts
@@ -22,11 +34,14 @@ parametro). Luego deberás calcular los decimales del pi considerando el núme
   - pi.expect.ts
 - .env
 
-## Los EndPoint son los siguientes:
+## Se implementan los siguientes EndPoint ##
 **Autenticación**
-> POST: http://localhost:3000/login
+Para agregar seguridad al sitio se define un EndPoint que devuelve un Token que deberá utilizarse en cada petición a la API
+
+> POST: http://localhost:3000/api/login
 
 **INPUT**
+Debe proporcionar las siguientes credenciales
 ````
 {
   "login": "santiago",
@@ -35,6 +50,7 @@ parametro). Luego deberás calcular los decimales del pi considerando el núme
 ````
 
 **OUTPUT**
+Copiar el Token el cuál utilizará en la peticiones a la API de PI
 ````
 {
 "success": true,
@@ -44,9 +60,9 @@ parametro). Luego deberás calcular los decimales del pi considerando el núme
 ````
 
 ## Uso del método PI para calcular la cantidad de decimales
-> GET: http://localhost:3000/pi
+> GET: http://localhost:3000/api/pi
 
-Añadir el Header al llamado:
+Añadir el Header al llamado el Token recibido:
 > auth: 'token recibido en el endopoint Login'
 
 ## Ejemplo:
@@ -55,7 +71,7 @@ auth: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiJzYW50aWFnbyIsImlhdCI6
 ````
 
 **INPUT**
-> /pi?random_limit=12
+> /api/pi?random_limit=12
 
 **OUTPUT**
 ````
@@ -89,17 +105,18 @@ Debe recibirse el parámetro _random_limit_ por la URL
 ````
 {
 "success": false,
-"message": "Debe ingresar un número entero ente 0 y 100"
+"message": "Debe ingresar un número entero ente 0 y 48"
 }
 ````
 
-**Solo se permiten números entre 0 y 100**
+**Solo se permiten números entre 0 y 48**
 ````
 {
 "success": false,
-"message": "El random limit debe ser mayor >= 0  y <= 100"
+"message": "El random limit debe ser mayor >= 0  y <= 48"
 }
 ````
+**Se realizan pruebas con las librería Math.PI de javascript, la cuál devuelve un máximo de 48 decimales**
 
 ## Pruebas unitarias
 Se difinen 5 pruebas
@@ -125,5 +142,20 @@ Se difinen 5 pruebas
 - [x] JWT
 - [x] Mocha
 - [x] Chai   
+
+## Documentación adicional ##
+La carpeta `documentacion` contiene información de pruebas adicionales
+
+**Postman Collection**
+Se agrega collectión de Postman en `documentacion/YapoPI.postman_collection.json` con la configuración de los EndPoint (recuerde actualizar el Token de seguridad)
+
+**Apache jMeter**
+Se realizan pruebas decarga con [Apache jMeter](https://jmeter.apache.org/), los resultados de las pruebas están en `documentacion/jMetter/HTMLReports/index.html`
+
+# Autor #
+Wilmer Pino
+wilmerpino@gmail.com
+https://www.linkedin.com/in/wilmerpino/
+
 
 
