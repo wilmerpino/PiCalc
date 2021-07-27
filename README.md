@@ -136,7 +136,9 @@ Se difinen 5 pruebas
 ## Contenedor ##
 Se agrega archivo `Dockerfile` con la configuración de Docker para virtualizar el aplicativo
 
-Siga las siguientes instruccones para generar el _Contenedor Docker_
+**Para virtualizar la aplicación debe instalar [Docker](https://www.docker.com/) antes de continuar con las instrucciones**
+
+Para generar el _Contenedor Docker_ siga las siguientes instruccones 
 
 Desde la carpta `PiCalc` ejecute la siguente secuencia de comandos
 
