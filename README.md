@@ -3,7 +3,7 @@ Calcular los decimales del pi considerando el número random: Recibe un parámet
 parametro). Luego deberás calcular los decimales del pi considerando el número random.
 
 ## Instalación ##
-**Descargue el proyecto desde el repositorio*
+**Descargue el proyecto desde el repositorio**
 > git clone https://github.com/wilmerpino/PiCalc.git
 
 **Moverse a la carpeta PiCalc**
@@ -17,7 +17,7 @@ parametro). Luego deberás calcular los decimales del pi considerando el núme
 
 **Nota: Debe tener instalado `node` y `npm`**
 
-## La aplicación se corre en el puerto 300
+## La aplicación se corre en el puerto 3000
 > http://localhost:3000
 
 ## Carpetas y archivos del proyecto
@@ -152,7 +152,7 @@ Montar la imagen en un contededor Docker
 Varificar que el contenedor este ejectándose
 > docker container ls
 
-**La aplicación queda ejecutándose en la URL http://localhost:300**
+**La aplicación queda ejecutándose en la URL http://localhost:3000**
 
 ## Documentación adicional ##
 La carpeta `documentacion` contiene información de pruebas adicionales
